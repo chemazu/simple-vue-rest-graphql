@@ -11,8 +11,9 @@ export const login = async (user: { email: string; password: string }) => {
       })
       .then((data) => {
         localStorage.setItem("token", data.token);
+        return { status: true, data: data };
       });
   } catch (error) {
-    console.log(error);
+    return { status: false, error: error };
   }
 };

@@ -2,7 +2,7 @@
   <div class="register">
     <div class="register-card">
       <div class="heading">
-        <h2>Create Account</h2>
+        <h2 class="text-3xl font-bold">Create Account</h2>
         <p>
           Already have an account <router-link to="/login">Log in</router-link>
         </p>
@@ -91,8 +91,4 @@ export default {
 };
 </script>
 
-<style>
-.regsiter {
-  background: #e5e5e5;
-}
-</style>
+<style scoped></style>
