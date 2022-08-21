@@ -4,52 +4,37 @@
       <div class="heading">
         <h2 class="text-3xl font-bold">Create Account</h2>
         <p>
-          Already have an account <router-link to="/login">Log in</router-link>
+          Already have an account?
+          <router-link to="/login">Log in</router-link>
         </p>
       </div>
       <form @submit.prevent="handleSubmit">
         <div class="form-row">
           <div class="form-item">
             <label for="name"> First Name</label>
-            <input type="text" v-model="fName" placeholder=" First Name" />
+            <input type="text" v-model="fName" placeholder="Type here" />
           </div>
-        </div>
-        <div class="form-row">
           <div class="form-item">
             <label for="name"> Last Name</label>
-            <input type="text" v-model="lName" placeholder="Last Name" />
+            <input type="text" v-model="lName" placeholder="Type here" />
           </div>
         </div>
-        <div class="form-row">
-          <div class="form-item">
-            <label for="email"> Email</label>
-            <input
-              type="email"
-              id="email"
-              v-model="email"
-              placeholder="Email"
-            />
-          </div>
-          password
-          <div class="form-item">
-            <label for="password"> Password</label>
-            <input type="password" v-model="password" placeholder="Password" />
-          </div>
+
+        <div class="form-item">
+          <label for="email"> Email</label>
+          <input
+            type="email"
+            id="email"
+            v-model="email"
+            placeholder="Type here"
+          />
         </div>
-        <div class="form-row">
-          <div class="form-item">
-            <label for="password"> Confirm Password</label>
-            <input
-              type="password"
-              v-model="confirmPassword"
-              placeholder="Password"
-            />
-          </div>
+        <div class="form-item">
+          <label for="password"> Password</label>
+          <input type="password" v-model="password" placeholder="Type here" />
         </div>
-        <div class="form-row">
-          <div class="form-item">
-            <button type="submit" class="btn btn-primary">Register</button>
-          </div>
+        <div class="button-wrapper">
+          <ButtonComponent title="Sign Up" className="disabled" />
         </div>
       </form>
     </div>
@@ -58,6 +43,7 @@
 
 <script>
 import { register } from "@/services/register";
+import ButtonComponent from "../components/ButtonComponent.vue";
 
 export default {
   data() {
@@ -66,7 +52,6 @@ export default {
       lName: "",
       email: "",
       password: "",
-      confirmPassword: "",
     };
   },
   methods: {
@@ -88,7 +73,11 @@ export default {
         });
     },
   },
+  components: {
+    ButtonComponent,
+  },
 };
 </script>
-
-<style scoped></style>
+<style lang="scss" scoped>
+@import "../assets/scss/RegisterView.scss";
+</style>

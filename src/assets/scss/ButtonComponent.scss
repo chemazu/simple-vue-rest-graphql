@@ -1,0 +1,29 @@
+button {
+  width: 100%;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 17px;
+  padding: 7px 15px;
+  text-align: center;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 17px;
+  border-radius: 4px;
+  height: 45px;
+}
+.pry {
+  background: #555658;
+  border: 0px;
+  color: #fff;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.disabled {
+  border: 0px;
+  color: #fff;
+  background: #b7bcc3;
+  &:hover {
+    cursor: not-allowed;
+  }
+}
